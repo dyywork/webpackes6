@@ -1,0 +1,15 @@
+<ion-view view-title="About" id="about-page">
+    <ion-header-bar>
+        <h2 class="title">About</h2>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="tech in about.technologies">
+                {{ tech }}
+                <ion-option-button class="button-positive" ng-click="about.removeTechnology(tech)">
+                    Delete
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

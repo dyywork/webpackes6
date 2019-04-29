@@ -1,0 +1,105 @@
+{
+  "name": "webpack-starter",
+  "version": "1.0.0",
+  "description": "A light foundation for your next frontend project based on webpack.",
+  "scripts": {
+    "start": "npm run build && ionic serve",
+    "build": "webpack --config webpack/webpack.config.prod.js  --colors",
+    "dev": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
+    "build:cordova": "npm run build && ionic cordova build android",
+    "build:run": "npm run build && ionic cordova run android"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomavic/ionic1-es6-webpack4-starter.git"
+  },
+  "keywords": [
+    "webpack",
+    "startkit",
+    "frontend",
+    "es6",
+    "javascript",
+    "webdev"
+  ],
+  "author": "webkid.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomavic/ionic1-es6-webpack4-starter/issues"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "rules": {
+      "semi": 2
+    }
+  },
+  "homepage": "https://github.com/tomavic/ionic1-es6-webpack4-starter#readme",
+  "devDependencies": {
+    "@ionic/v1-toolkit": "1.0.10",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.4.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-angular": "^3.3.0",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "ng-annotate-loader": "^0.6.1",
+    "ngtemplate-loader": "^2.0.1",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "angular": "^1.7.5",
+    "angular-ui-router": "^1.0.20",
+    "babel-polyfill": "^6.26.0",
+    "cordova-android": "6.3.0",
+    "cordova-ios": "4.5.5",
+    "cordova-plugin-app-version": "git+https://github.com/whiteoctober/cordova-plugin-app-version.git",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-image-picker": "^1.1.3",
+    "cordova-plugin-ionic-keyboard": "^2.1.3",
+    "cordova-plugin-ionic-webview": "^2.4.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "ionic-sdk": "^1.2.4",
+    "iosselect": "^1.1.5",
+    "jquery": "^3.4.0",
+    "layui-src": "^2.4.5"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-image-picker": {},
+      "cordova-plugin-app-version": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}

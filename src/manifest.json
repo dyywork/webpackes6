@@ -1,0 +1,11 @@
+{
+    "name": "My Ionic Seed",
+    "short_name": "My Ionic Seed",
+    "start_url": "index.html",
+    "display": "standalone",
+    "icons": [{
+        "src": "assets/img/profile.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }]
+}
