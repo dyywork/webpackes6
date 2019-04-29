@@ -82,6 +82,7 @@
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
+    "lodash": ">=4.17.11",
     "ionic-sdk": "^1.2.4",
     "iosselect": "^1.1.5",
     "jquery": "^3.4.0",
