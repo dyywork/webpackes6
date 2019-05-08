@@ -30,7 +30,7 @@
     </ion-side-menu-content>
 </ion-side-menus> -->
 
-<ion-tabs class="tabs-icon-top">
+<!-- <ion-tabs class="tabs-icon-top">
 
     
     <ion-tab  title="首页" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" ui-sref="app.home">
@@ -46,4 +46,48 @@
           <ion-nav-view name="appContentPerson"></ion-nav-view>
       </ion-tab>
   
-  </ion-tabs>
+  </ion-tabs> -->
+
+  <ui-view>
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header layui-bg-black" style="margin-bottom: 300px;">
+            <div class="layui-logo">angularjs后台布局</div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-left">
+              <li class="layui-nav-item">
+                <button class="layui-btn layui-btn-sm layui-bg-black" ng-click="ng.slideSwitch()">
+                  <i class="layui-icon layui-icon-spread-left" ng-show="ng.isOk"></i>
+                  <i class="layui-icon layui-icon-shrink-right" ng-show="!ng.isOk"></i>
+                </button>
+              </li>
+            </ul>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        莫名点
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd ng-click="ng.goOut()"><a href="">安全退出</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <!--侧边栏-->
+        <slide-tree ng-class="{slideSwitch:ng.isOk,slideSwitchOn:!ng.isOk}" data="{{treeData}}"></slide-tree>
+
+        <div class="layui-body" style="background: #FFFFFF;" ng-class="{bodySwitch:ng.isOk,bodySwitchOn:!ng.isOk}">
+            <!--tabs区域-->
+            <tab-sub data="{{tabsData}}"></tab-sub>
+            <!-- 内容主体区域 -->
+            <div class="layui-anim" data-anim="layui-anim-scale" style="padding: 15px;">
+                <ui-view name="appContent"></ui-view>
+            </div>
+        </div>
+
+        <div class="layui-footer"  ng-class="{bodySwitch:ng.isOk,bodySwitchOn:!ng.isOk}">
+            <!-- 底部固定区域 -->
+            底部固定区域
+        </div>
+    </div>
+</ui-view>

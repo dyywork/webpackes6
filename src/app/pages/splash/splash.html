@@ -1,7 +1,25 @@
 
-    <ion-content id="splash-page" scroll="false">
-        <button on-tap="splash.login()" class="button button-block button-positive button-outline">
-            <strong>登录</strong>
-        </button>
-    </ion-content>
-
+   
+    <div id="mydiv">
+        <div class="login-form">
+          <form class="layui-form">
+            <div class="layui-form-item">
+              <div class="layui-input-inline layui-relative layui-row">
+                <i class="layui-icon layui-icon-username"></i>
+                <input type="text" name="title" ng-model="login.name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input layui-raduis">
+              </div>
+            </div>
+            <div class="layui-form-item margauto">
+              <div class="layui-input-inline layui-relative layui-row">
+                <i class="layui-icon layui-icon-password layui-icon-input"></i>
+                <input type="text" name="text" ng-model="login.age" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input layui-raduis">
+              </div>
+            </div>
+            <div class="layui-form-item padding">
+              <div class="layui-row">
+                <button class="layui-btn layui-btn-radius layui-btn-fluid" ng-click="splash.login()">登录</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>

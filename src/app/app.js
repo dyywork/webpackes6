@@ -7,6 +7,7 @@
 // import "../assets/lib/ionic/js/ionic-angular";
 import "../assets/lib/ionic/js/ionic.bundle";
  import '../ng-cordova';
+
  
 //import "ionic-sdk/release/js/ionic-angular";
 // import 'ionic-sdk/release/js/ionic-angular';
