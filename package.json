@@ -70,10 +70,11 @@
     "angular": "^1.7.5",
     "angular-ui-router": "^1.0.20",
     "babel-polyfill": "^6.26.0",
-    "lodash": ">=4.17.11",
     "ionic-sdk": "^1.2.4",
     "iosselect": "^1.1.5",
     "jquery": "^3.4.0",
-    "layui-src": "^2.4.5"
+    "layui-src": "^2.4.5",
+    "lodash": ">=4.17.11",
+    "mockjs": "^1.0.1-beta3"
   }
 }

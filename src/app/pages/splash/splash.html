@@ -1,20 +1,26 @@
 
    
-    <div id="mydiv">
+    <div class="login-bg" id="mydiv">
         <div class="login-form">
+          <div class="login-title">
+            layuiAdminSPA
+          </div>
           <form class="layui-form">
             <div class="layui-form-item">
               <div class="layui-input-inline layui-relative layui-row">
                 <i class="layui-icon layui-icon-username"></i>
-                <input type="text" name="title" ng-model="login.name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input layui-raduis">
+                <input type="text" name="title" ng-model="splash.user" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input layui-raduis">
               </div>
             </div>
             <div class="layui-form-item margauto">
               <div class="layui-input-inline layui-relative layui-row">
                 <i class="layui-icon layui-icon-password layui-icon-input"></i>
-                <input type="text" name="text" ng-model="login.age" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input layui-raduis">
+                <input type="text" name="text" ng-model="splash.password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input layui-raduis">
               </div>
             </div>
+            <div class="layui-form-item" style="margin-bottom: 20px;">
+                <input type="checkbox" name="remember" lay-skin="primary" title="记住密码"><div class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><span>记住密码</span><i class="layui-icon layui-icon-ok"></i></div>
+              </div>
             <div class="layui-form-item padding">
               <div class="layui-row">
                 <button class="layui-btn layui-btn-radius layui-btn-fluid" ng-click="splash.login()">登录</button>
@@ -22,4 +28,5 @@
             </div>
           </form>
         </div>
+        <img class="login_img" src="../../../assets/img/img_bg@3x.png" alt="">
       </div>

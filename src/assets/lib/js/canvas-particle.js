@@ -37,11 +37,13 @@
 				max_conn: 10
 			}
 		};
-
+	
 		// 获取context
 		if(canvas.element.getContext("2d")){
 			canvas.context = canvas.element.getContext("2d");
+			canvas.context.fillStyle="#0000ff"
 		}else{
+			
 			return null;
 		}
 
@@ -93,6 +95,7 @@
 		context.clearRect(0, 0, canvas.element.width, canvas.element.height);
 		context.beginPath();
 		context.fillStyle = "rgb("+ canvas.config.color +")";
+		
 		for(var i = 0, len = canvas.config.count; i < len; i++){
 			if(canvas.points.length != canvas.config.count){
 				// 初始化所有点

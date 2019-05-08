@@ -29,7 +29,7 @@ export default class httpService {
       url: urls + url,
       method: method,
       headers: {'Content-Type': 'application/json'},
-      params: params
+      data: params
     }).success(data => {
       this.$q.defer().resolve(data);
     }).error(data => {
