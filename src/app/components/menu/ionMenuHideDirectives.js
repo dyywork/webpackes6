@@ -5,19 +5,13 @@ const ionMenu = ['$state','httpService',($state,httpService) => {
       replace: true,
       template: `<div class="layui-side">
                   <div class="layui-side-scroll">
-                  <div class="logo"><b>layuiAdminSPA</b></div>
+                  <div class="logo_img"><img src="../../assets/img/img_logo@3x.png"/></div>
                       <ul class="layui-nav layui-nav-tree">                      
                           <li class="layui-nav-item" ng-repeat="item in treeData"
                               ng-class="{'layui-nav-itemed': item.parentShow}">
-                              <a class="" href="javascript:;" ng-click="treeHeader(item)">
+                              <a class="" href="javascript:;" ng-click="treeHeader(item)" id="{{item.id}}" ng-mouseenter="enterUp($event,item)" ng-mouseleave="leaveUp(e,item)">
                                 <i class="iconfont" ng-class="item.icon"></i>
-                                &nbsp;{{item.mainTitle}}
                               </a>
-                              <dl class="layui-nav-child" ng-show="!attrs.isok">
-                                  <dd ng-repeat="i in item.childTree" ng-class="{'layui-this': i.show }"
-                                      ng-click="goTree(i);$event.stopPropagation()">
-                                      <a href="javascript:;" style="padding-left: 40px;">{{i.title}}</a></dd>
-                              </dl>
                           </li>
                       </ul>
                   </div>
@@ -25,7 +19,8 @@ const ionMenu = ['$state','httpService',($state,httpService) => {
               `,
       link: function (scope, element, attrs) {
         let elements = layui.element,
-          form = layui.form;
+          form = layui.form,
+          layer = layui.layer;
           httpService.httpGet('api/slide',{}).then(res => {
             const {data} = res;
             scope.treeData = data.data;
@@ -35,9 +30,13 @@ const ionMenu = ['$state','httpService',($state,httpService) => {
             },200);
             console.log(res);
           });
-        scope.gettext = function() {
-          console.log(1);
+        scope.enterUp = (e,item) => {
+          scope.tips = layer.tips(item.mainTitle,e.target);
         };
+        scope.leaveUp = (e,item) => {
+          layer.close(scope.tips);
+        };
+
       }
     };
 }];
