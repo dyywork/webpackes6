@@ -48,8 +48,8 @@
 
   @keyframes myfirst1
   {
-      0%   {width:200px;}
-      100% {width:60px;}
+      0%   {width:200px;display: none;}
+      100% {width:60px;display: none;}
   }
  
   @keyframes myfirst1On
@@ -115,15 +115,13 @@
 }
 
 @keyframes slideHide {
-  0%   {display:block;}
-  60% {display: none; width: 60px;}
+  0%   {display:none; width: 60px;}
   100% {display: none; width: 60px;}
 }
 
 @keyframes slideHideOn {
-  0%   {display:none;}
-  60% {display: block; width: 60px;}
-  100% {display: block; width: 60px;}
+  0%   {display:none; width: 60px;}
+  100% {display: none; width: 60px;}
 }
 
   @keyframes myfirstOn {
@@ -222,9 +220,11 @@
 .logo{
   width: 100%;
   height: 60px;
-  text-align: center;
+  padding-left: 10px;
   line-height: 60px;
-  
+  img{
+    width: 40px;
+  }
 }
 .logo_img{
   width: 60px;
@@ -245,4 +245,7 @@
   height: 50px;
   line-height: 50px;
   
+}
+.layui-layout-admin .layui-footer{
+  left: 0px;
 }

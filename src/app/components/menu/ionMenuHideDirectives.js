@@ -9,7 +9,7 @@ const ionMenu = ['$state','httpService',($state,httpService) => {
                       <ul class="layui-nav layui-nav-tree">                      
                           <li class="layui-nav-item" ng-repeat="item in treeData"
                               ng-class="{'layui-nav-itemed': item.parentShow}">
-                              <a class="" href="javascript:;" ng-click="treeHeader(item)" id="{{item.id}}" ng-mouseenter="enterUp($event,item)" ng-mouseleave="leaveUp(e,item)">
+                              <a class="" href="javascript:;" ng-click="treeHeader(item)" ng-mouseenter="enterUp($event,item)" ng-mouseleave="leaveUp(e,item)">
                                 <i class="iconfont" ng-class="item.icon"></i>
                               </a>
                           </li>
@@ -36,7 +36,10 @@ const ionMenu = ['$state','httpService',($state,httpService) => {
         scope.leaveUp = (e,item) => {
           layer.close(scope.tips);
         };
-
+        scope.treeHeader = () => {
+          layer.close(scope.tips);
+          scope.$parent.vm.isOk = false;
+        };
       }
     };
 }];

@@ -6,7 +6,7 @@ const AboutRouting = ($stateProvider) => {
     .state('app.about', {
         url: '/about',
         views: {
-          'appContentAbout': {
+          'appContent': {
             template: aboutTemplate,
             controller: 'AboutController',
             controllerAs: 'about'

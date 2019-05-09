@@ -5,7 +5,7 @@ const ionMenu = ['$state','httpService',($state,httpService) => {
       replace: true,
       template: `<div class="layui-side">
                   <div class="layui-side-scroll">
-                  <div class="logo"><b>layuiAdminSPA</b></div>
+                  <div class="logo"><img src="../../assets/img/img_logo@3x.png"/><b style="padding-left:10px;">layuiAdminSPA</b></div>
                       <ul class="layui-nav layui-nav-tree">                      
                           <li class="layui-nav-item" ng-repeat="item in treeData"
                               ng-class="{'layui-nav-itemed': item.parentShow}">
@@ -37,6 +37,9 @@ const ionMenu = ['$state','httpService',($state,httpService) => {
           });
         scope.gettext = function() {
           console.log(1);
+        };
+        scope.goTree = (res) => {
+          $state.go(res.url);
         };
       }
     };

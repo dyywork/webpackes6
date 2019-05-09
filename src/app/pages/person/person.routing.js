@@ -5,7 +5,7 @@ const PersonRouting = ($stateProvider) => {
   .state('app.person', {
     url: '/person',
     views: {
-      'appContentPerson': {
+      'appContent': {
         template: PersonTemplate,
         controller: 'PersonController',
         controllerAs: 'vm'
