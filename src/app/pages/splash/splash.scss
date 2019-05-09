@@ -25,6 +25,12 @@
     z-index: 10;
   }
 }
+.layui-bg-header{
+  background-image: linear-gradient(-62deg, #00B2FF 9%, #007BFE 100%);
+}
+.layui-header-icon{
+  background-color: transparent;
+}
   .margauto{
       margin: 0px auto;
   }
@@ -120,7 +126,7 @@
   }
   .layui-relative input {
     border-width: 0;
-    color: #FFFFFF;
+    color: #002447;
     padding-left: 35px;
     background: rgba(255,255,255,0.5)
   }
@@ -174,3 +180,12 @@
     box-sizing: border-box;
     pointer-events: none;
   }
+ /*  .layui-layout-admin .layui-body {
+    top: 0px;
+    bottom: 44px;
+} */
+/* .home {
+  #home-page{
+    margin-top: 60px;
+  }
+} */
