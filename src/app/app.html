@@ -52,8 +52,8 @@
     <div class="layui-layout layui-layout-admin">
        
         <!--侧边栏-->
-        <ion-menu ng-class="{slideSwitch:vm.isOk,slideSwitchOn:!vm.isOk}" ng-show="!vm.isOk" ></ion-menu>
-        <ion-menu-hide ng-class="{slideHideSwitch:vm.isOk,slideHideSwitchOn:!vm.isOk}" ng-show="vm.isOk"></ion-menu-hide>
+        <ion-menu ng-class="{slideSwitch:vm.isOk,slideSwitchOn:!vm.isOk}" treeData="vm.treeData" ng-show="!vm.isOk" ></ion-menu>
+        <ion-menu-hide ng-class="{slideHideSwitch:vm.isOk,slideHideSwitchOn:!vm.isOk}" treeData="{{vm.treeData}}" ng-show="vm.isOk"></ion-menu-hide>
        <!--  <slide-tree ng-class="{slideSwitch:ng.isOk,slideSwitchOn:!ng.isOk}" data="{{treeData}}"></slide-tree> -->
         <div class="layui-header layui-bg-header" style="box-shadow: 0 2px 13px 0 #909FAE;">
             <!-- <div class="layui-logo"><b>layuiAdminSPA</b></div> -->
@@ -78,7 +78,7 @@
                 </li>
             </ul>
         </div>
-        <div class="layui-body" style="background: #FFFFFF;z-index: 99999999;" ng-class="{bodySwitch:vm.isOk,bodySwitchOn:!vm.isOk}">
+        <div class="layui-body" style="background: #FFFFFF;z-index: 0;" ng-class="{bodySwitch:vm.isOk,bodySwitchOn:!vm.isOk}">
             <!--tabs区域-->
             <tab-sub data="{{tabsData}}"></tab-sub>
             <!-- 内容主体区域 -->

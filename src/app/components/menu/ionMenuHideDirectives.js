@@ -18,18 +18,6 @@ const ionMenu = ['$state','httpService',($state,httpService) => {
               </div>
               `,
       link: function (scope, element, attrs) {
-        let elements = layui.element,
-          form = layui.form,
-          layer = layui.layer;
-          httpService.httpGet('api/slide',{}).then(res => {
-            const {data} = res;
-            scope.treeData = data.data;
-            setTimeout(()=>{
-              elements.render();
-              form.render();
-            },200);
-            console.log(res);
-          });
         scope.enterUp = (e,item) => {
           scope.tips = layer.tips(item.mainTitle,e.target);
         };

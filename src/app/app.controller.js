@@ -2,9 +2,11 @@ import { assign } from 'lodash';
 
 export default class AppController {
     /*@ngInject*/
-    constructor($scope) {
-        assign(this,{$scope});
+    constructor($scope,httpService) {
+        assign(this,{$scope,httpService});
         this.isOk = false;
+
+
         var u = navigator.userAgent, app = navigator.appVersion;  
         console.log(u.indexOf('iPhone')+'-'+ u.indexOf('Android'));
         console.log(app);
