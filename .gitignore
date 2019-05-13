@@ -11,3 +11,4 @@ platforms/
 plugins/
 coverage/
 dist/
+package-lock.json
