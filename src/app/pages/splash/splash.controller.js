@@ -23,8 +23,8 @@ export default class SplashController {
           };
           //调用
           CanvasParticle(config);
-          this.user = '';
-          this.password = '';
+          this.user = 'admin';
+          this.password = 'admin';
     }
     login() {
         this.httpService.httpPost('login','post',{user: this.user,password: this.password}).then(res => {
