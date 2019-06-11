@@ -2,8 +2,8 @@ import { assign } from 'lodash';
 
 export default class AppController {
     /*@ngInject*/
-    constructor($scope,httpService) {
-        assign(this,{$scope,httpService});
+    constructor($scope,httpService,$state) {
+        assign(this,{$scope,httpService,$state});
         this.isOk = false;
         let layer = layui.layer;
 
@@ -36,5 +36,7 @@ export default class AppController {
         this.isOk = !this.isOk;
         console.log(this.isOk);
     }
-
+    goOut() {
+        this.$state.go('index');
+    }
 }
