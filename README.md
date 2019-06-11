@@ -1,1 +1,1 @@
-#预览 url('http://www.dingyongya.club')
+[预览dome](http://www.dingyongya.club)
