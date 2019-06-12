@@ -1,6 +1,6 @@
 import { assign } from 'lodash';
 
-export default class HomeController {
+export default class HomeDetailController {
     /*@ngInject*/
     constructor($state, userService, httpService,$cordovaAppVersion) {
         assign(this, { $state, userService, httpService,$cordovaAppVersion });
@@ -24,13 +24,12 @@ export default class HomeController {
     }
 
     onAboutTap() {
-        this.$state.go('app.homeDetail');
-        /* this.layer.msg(666);
+        this.layer.msg(666);
     
         cordova.getAppVersion.getVersionNumber().then(function(res){
             this.layer.msg(res);
         });
-         */
+        
        //  console.log(ngCordova);
         // this.$cordovaAppVersion.getAppName( res=> {
         //     console.log(res);
