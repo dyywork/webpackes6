@@ -15,7 +15,7 @@ Mock.mock('http://dingyongya.club:3001/project/page','post',(option) => {
         "urlImg": 
           'https://goss.veer.com/creative/vcg/veer/612/veer-134669323.jpg',
          
-        
+        sex: i%2==0?0:1
       }
     );
   }

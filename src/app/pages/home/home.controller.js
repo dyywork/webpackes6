@@ -2,10 +2,10 @@ import { assign } from 'lodash';
 import '../../../mock/home';
 export default class HomeController {
     /*@ngInject*/
-    constructor($state, userService, httpService,$cordovaAppVersion) {
-       
-        assign(this, { $state, userService, httpService,$cordovaAppVersion });
-        
+    constructor($state, userService, httpService, $cordovaAppVersion) {
+
+        assign(this, { $state, userService, httpService, $cordovaAppVersion });
+
         this.text = 'Welcome to the Ionic Seed';
         this.user = {
             name: 'Dave Ackerman',
@@ -16,46 +16,39 @@ export default class HomeController {
         this.userService.getUsers().then(response => {
             this.users = response.data.users;
         },
-        (error) => {
-            this.error = 'something went wrong';
-        });
+            (error) => {
+                this.error = 'something went wrong';
+            });
         this.layer = layui.layer;
-        
+
         // this.layer.msg(111);
         this.img = [];
-        httpService.httpPost('project/page','POST',{
-            "commodityTypeId": "",
-            "limit": 10,
-            "page": 2
-          }).then(res => {
-              const { data } = res;
-              console.log(data);
-             
-          });
-          setTimeout(()=> {
+        setTimeout(() => {
             this.ngInit();
-          },200);
-      
+        }, 200);
+
     }
     ngInit() {
-        var table = layui.table,$ = layui.jquery;
-    
-  //方法级渲染
+        var table = layui.table, $ = layui.jquery, form = layui.form;
+        //方法级渲染
         table.render({
             elem: '#LAY_table_user'
-            ,url: this.httpService.httpUrl() + 'project/page'
-            ,method: 'POST'
-            ,where: {
+            , url: this.httpService.httpUrl() + 'project/page'
+            , method: 'POST'
+            , where: {
                 "commodityTypeId": ""
             }
-            ,contentType: 'application/json'
-            ,cols: [[
-            {field:'id', title: '用户名',width:100}
-            ,{field:'urlImg', title: '地址'}
+            , contentType: 'application/json'
+            , cols: [[
+                { field: 'id', title: '用户名ID', width: 100 }
+                , { field: 'urlImg', title: '地址' }
+                ,{field:'sex', title:'性别', width:85, templet: '#switchTpl', unresize: true}
+                , { fixed: 'right', width: 165, align: 'center', toolbar: '#barDemo' }
             ]]
-            ,height: 400
-            ,page: true
-            ,parseData: function(res){ //res 即为原始返回的数据
+            , height: 481
+            , page: true
+            , parseData: function (res) { //res 即为原始返回的数据
+                console.log(res);
                 return {
                     "success": res.data.success, //解析接口状态
                     "msg": res.resultMessage, //解析提示文本
@@ -63,15 +56,58 @@ export default class HomeController {
                     "data": res.data.content //解析数据列表
                 };
             }
-            ,response: {
+            , response: {
                 statusName: 'success' //规定数据状态的字段名称，默认：code
-                ,statusCode: true //规定成功的状态码，默认：0
+                , statusCode: true //规定成功的状态码，默认：0
             }
-            ,done: ()=> {
+            , done: (res) => {
                 $('#LAY_table_user').resize();
             }
         });
-        
+
+        table.on('tool(user)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+                , layEvent = obj.event; //获得 lay-event 对应的值
+            if (layEvent === 'detail') {
+                layer.msg('查看操作');
+            } else if (layEvent === 'del') {
+                layer.confirm('真的删除行么', function (index) {
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    //向服务端发送删除指令
+                });
+            } else if (layEvent === 'edit') {
+                $('body').append($('#addUser'));
+                layer.open({
+                    type: 1 //此处以iframe举例
+                    , title: '编辑商品类型'
+                    , area: ['390px', '400px']
+                    , offset: 'auto'
+                    , content: $('#addUser')
+                    // ,shade: 0
+                    , btn: ['确定', '取消'] //只是为了演示
+                    , yes: function () {
+                        form.on('submit(dome)', (data) => {
+                            console.log(data);
+                            layer.msg('表单数据'+JSON.stringify(data.field));
+                            return false;
+                        });
+                        $('.layer-confirm').click();
+                    }
+                    , btn2: function () {
+                        layer.closeAll();
+                    }
+                    , success: function (layero) {
+                        form.val("radioCustomer", {
+                            "id": data.id // "name": "value"
+                            , "sex": data.sex
+                            , "urlImg": data.urlImg
+                        });
+                        form.render();
+                    }
+                });
+            }
+        });
     }
     onAboutTap() {
         this.$state.go('app.homeDetail');
@@ -81,7 +117,7 @@ export default class HomeController {
             this.layer.msg(res);
         });
          */
-       //  console.log(ngCordova);
+        //  console.log(ngCordova);
         // this.$cordovaAppVersion.getAppName( res=> {
         //     console.log(res);
         // });
@@ -99,7 +135,7 @@ export default class HomeController {
         //   }, function (error) {
         //     console.log(error);
         //   });
-       //  this.$state.go('app.about');
+        //  this.$state.go('app.about');
     }
 
     test() {
@@ -107,10 +143,10 @@ export default class HomeController {
         this.$cordovaAppVersion.getAppName().then(function (version) {
             this.layer.msg(version);
         });
-    //    this.httpService.httpGet('api/users/login', { userName: 'admin', password: '123456' }).then(res => {
-    //        this.layer.msg(JSON.stringify(res));
-    //        console.log(res);
-    //    });
+        //    this.httpService.httpGet('api/users/login', { userName: 'admin', password: '123456' }).then(res => {
+        //        this.layer.msg(JSON.stringify(res));
+        //        console.log(res);
+        //    });
     }
 
 }

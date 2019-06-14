@@ -1,7 +1,7 @@
-.login-bg{
-  background-image: linear-gradient(62deg, #00B2FF 9%, #007BFE 100%);
+.login-bg {
+  background-image: linear-gradient(62deg, #00b2ff 9%, #007bfe 100%);
   position: relative;
-  .login-title{
+  .login-title {
     width: 100%;
     text-align: center;
     height: 60px;
@@ -9,200 +9,233 @@
     font-size: 25px;
     color: #002447;
   }
-  .login_img{
+  .login_img {
     width: 100%;
     position: absolute;
     bottom: 0px;
   }
-  .login-form{
+  .login-form {
     position: relative;
     padding: 10px 50px 10px;
     border-radius: 10px;
     width: 400px;
     height: auto;
     margin: 15% auto 0px;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     z-index: 10;
   }
 }
-.layui-bg-header{
-  background-image: linear-gradient(-62deg, #00B2FF 9%, #007BFE 100%);
+.layui-bg-header {
+  background-image: linear-gradient(-62deg, #00b2ff 9%, #007bfe 100%);
 }
-.layui-header-icon{
+.layui-header-icon {
   background-color: transparent;
 }
-  .margauto{
-      margin: 0px auto;
-  }
-  
-  .slideSwitch{
-      -webkit-animation:myfirst1 0.1s linear;
-      -webkit-animation-play-state:running;
-      -webkit-animation-fill-mode:forwards;
-  }
-  .slideSwitchOn{
-      -webkit-animation:myfirst1On 0.1s linear;
-      -webkit-animation-play-state:running;
-      -webkit-animation-fill-mode:forwards;
-  }
+.margauto {
+  margin: 0px auto;
+}
 
-  @keyframes myfirst1
-  {
-      0%   {width:200px;display: none;}
-      100% {width:60px;display: none;}
-  }
- 
-  @keyframes myfirst1On
-  {
-    0%   {width:60px;}
-    100% {width:200px;}
-  }
-  .bodySwitch{
-      -webkit-animation:myfirst 0.1s linear;
-      -webkit-animation-play-state:running;
-      -webkit-animation-fill-mode:forwards;
-  }
-  .bodySwitchOn{
-    -webkit-animation:myfirstOn 0.1s linear;
-    -webkit-animation-play-state:running;
-    -webkit-animation-fill-mode:forwards;
-  }
-  
-  .headerSwitch{
-    z-index: 600;
-      -webkit-animation:headers 0.1s linear;
-      -webkit-animation-play-state:running;
-      -webkit-animation-fill-mode:forwards;
-  }
-  .headerSwitchOn{
-    z-index: 600;
-    -webkit-animation:headersOn 0.1s linear;
-    -webkit-animation-play-state:running;
-    -webkit-animation-fill-mode:forwards;
-  }
-  
-  @keyframes headers {
-    0%   {left:200px;}
-    100% {left:60px;}
-  }
+.slideSwitch {
+  -webkit-animation: myfirst1 0.1s linear;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+}
+.slideSwitchOn {
+  -webkit-animation: myfirst1On 0.1s linear;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+}
 
-  @keyframes headersOn {
-    0%   {left:60px;}
-    100% {left:200px;}
+@keyframes myfirst1 {
+  0% {
+    width: 200px;
+    display: none;
   }
-
-.slideHideSwitch{
-  -webkit-animation:slideHide 0.1s linear;
-  -webkit-animation-play-state:running;
-  -webkit-animation-fill-mode:forwards;
-  .layui-side-scroll{
+  100% {
     width: 60px;
-    .layui-nav-tree{
+    display: none;
+  }
+}
+
+@keyframes myfirst1On {
+  0% {
+    width: 60px;
+  }
+  100% {
+    width: 200px;
+  }
+}
+.bodySwitch {
+  -webkit-animation: myfirst 0.1s linear;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+}
+.bodySwitchOn {
+  -webkit-animation: myfirstOn 0.1s linear;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.headerSwitch {
+  z-index: 600;
+  -webkit-animation: headers 0.1s linear;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+}
+.headerSwitchOn {
+  z-index: 600;
+  -webkit-animation: headersOn 0.1s linear;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes headers {
+  0% {
+    left: 200px;
+  }
+  100% {
+    left: 60px;
+  }
+}
+
+@keyframes headersOn {
+  0% {
+    left: 60px;
+  }
+  100% {
+    left: 200px;
+  }
+}
+
+.slideHideSwitch {
+  -webkit-animation: slideHide 0.1s linear;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+  .layui-side-scroll {
+    width: 60px;
+    .layui-nav-tree {
       width: 60px;
     }
   }
 }
 .slideHideSwitchOn {
-  -webkit-animation:slideHideOn 0.1s linear;
-  -webkit-animation-play-state:running;
-  -webkit-animation-fill-mode:forwards;
-  .layui-side-scroll{
+  -webkit-animation: slideHideOn 0.1s linear;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+  .layui-side-scroll {
     width: 60px;
-    .layui-nav-tree{
+    .layui-nav-tree {
       width: 60px;
     }
   }
 }
 
 @keyframes slideHide {
-  0%   {display:none; width: 60px;}
-  100% {display: none; width: 60px;}
+  0% {
+    display: none;
+    width: 60px;
+  }
+  100% {
+    display: none;
+    width: 60px;
+  }
 }
 
 @keyframes slideHideOn {
-  0%   {display:none; width: 60px;}
-  100% {display: none; width: 60px;}
+  0% {
+    display: none;
+    width: 60px;
+  }
+  100% {
+    display: none;
+    width: 60px;
+  }
 }
 
-  @keyframes myfirstOn {
-    0%   {left:60px;}
-    100% {left:200px;}
+@keyframes myfirstOn {
+  0% {
+    left: 60px;
   }
+  100% {
+    left: 200px;
+  }
+}
 
-  @keyframes myfirst
-   {
-       0%   {left:200px;}
-       100% {left:60px;}
-   }
- 
- 
-  
-  .layui-relative{
-    position: relative;
+@keyframes myfirst {
+  0% {
+    left: 200px;
   }
-  .layui-relative i{
-    color: #FFFFFF;
-    position: absolute;
-    top: 10px;
-    left: 13px;
+  100% {
+    left: 60px;
   }
-  .layui-relative input {
-    border-width: 0;
-    color: #002447;
-    padding-left: 35px;
-    background: rgba(255,255,255,0.5)
-  }
-  .layui-relative input::placeholder {
-    color: #FFFFFF;
-  }
-  .layui-raduis{
-    border-radius: 19px!important;
-  }
-  .layui-row{
-    width: 100%!important;
-  }
-  .padding{
-    padding: 10px;
-  }
-  /*@-moz-keyframes myfirst !* Firefox *!
+}
+
+.layui-relative {
+  position: relative;
+}
+.layui-relative i {
+  color: #ffffff;
+  position: absolute;
+  top: 10px;
+  left: 13px;
+}
+.layui-relative input {
+  border-width: 0;
+  color: #002447;
+  padding-left: 35px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.layui-relative input::placeholder {
+  color: #ffffff;
+}
+.layui-raduis {
+  border-radius: 19px !important;
+}
+.layui-row {
+  width: 100% !important;
+}
+.padding {
+  padding: 10px;
+}
+/*@-moz-keyframes myfirst !* Firefox *!
   {
       0%   {background:red;}
       25%  {background:yellow;}
       50%  {background:blue;}
       100% {background:green;}
   }*/
-  /* tab 样式修改 */
-  .layui-tab-card>.layui-tab-title li:hover {
-    background-color: #FFFFFF;
-  }
-  
-  .layui-tab-card>.layui-tab-title li:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 4px;
-    border-radius: 0;
-    background-color: #292B34;
-    transition: all .3s;
-    -webkit-transition: all .3s;
-  }
-  .layui-tab-card>.layui-tab-title .layui-this:after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    content: '';
-    width: 100%;
-    height: 4px;
-    border-width: 1px;
-    border-style: solid;
-    border-bottom-color: #fff;
-    border-radius: 2px 2px 0 0;
-    box-sizing: border-box;
-    pointer-events: none;
-  }
- /*  .layui-layout-admin .layui-body {
+/* tab 样式修改 */
+.layui-tab-card > .layui-tab-title li:hover {
+  background-color: #ffffff;
+}
+
+.layui-tab-card > .layui-tab-title li:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  border-radius: 0;
+  background-color: #292b34;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+.layui-tab-card > .layui-tab-title .layui-this:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-bottom-color: #fff;
+  border-radius: 2px 2px 0 0;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+/*  .layui-layout-admin .layui-body {
     top: 0px;
     bottom: 44px;
 }
@@ -216,36 +249,37 @@
   width: 200px;
   overflow-x: hidden;
   z-index: 10000;
+  background: #393d49;
 }
-.logo{
+.logo {
   width: 100%;
   height: 60px;
   padding-left: 10px;
   line-height: 60px;
-  img{
+  b {
+    color: #f8f8f8;
+  }
+  img {
     width: 40px;
   }
 }
-.logo_img{
+.logo_img {
   width: 60px;
   height: 60px;
   text-align: center;
   line-height: 60px;
-  img{
+  img {
     width: 40px;
   }
-
 }
 .layui-nav-tree .layui-nav-child a {
   height: 50px;
   line-height: 50px;
 }
 .layui-nav-tree .layui-nav-item a {
-  
   height: 50px;
   line-height: 50px;
-  
 }
-.layui-layout-admin .layui-footer{
+.layui-layout-admin .layui-footer {
   left: 0px;
 }
