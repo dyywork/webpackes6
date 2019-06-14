@@ -2,6 +2,7 @@ const Path = require('path');
 const Webpack = require('webpack');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -22,13 +23,10 @@ module.exports = merge(common, {
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: {
-          warnings: false,
           drop_console: true,//console
           pure_funcs: ['console.log']//移除console
         }
-      },
-      sourceMap: config.build.productionSourceMap,
-      parallel: true
+      }
     })
   ],
   module: {
