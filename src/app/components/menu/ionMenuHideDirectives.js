@@ -10,7 +10,7 @@ const ionMenu = ['$state','httpService',($state,httpService) => {
                           <li class="layui-nav-item" ng-repeat="item in treeData"
                               ng-class="{'layui-nav-itemed': item.parentShow}">
                               <a class="" href="javascript:;" ng-click="treeHeader(item)" ng-mouseenter="enterUp($event,item)" ng-mouseleave="leaveUp(e,item)">
-                                <i class="iconfont" ng-class="item.icon"></i>
+                                <i class="iconfont layui-icon" ng-class="item.icon"></i>
                               </a>
                           </li>
                       </ul>

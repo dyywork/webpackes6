@@ -7,7 +7,9 @@ export default class httpService {
   constructor ($http, $q) {
     assign(this, { $http, $q });
   }
-
+httpUrl() {
+  return 'http://dingyongya.club:3001/';
+}
  httpGet(url, params) {
     return this.$http({
       url: urls + url,

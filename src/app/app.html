@@ -78,13 +78,11 @@
                 </li>
             </ul>
         </div>
-        <div class="layui-body" style="background: #FFFFFF;z-index: 0;" ng-class="{bodySwitch:vm.isOk,bodySwitchOn:!vm.isOk}">
-            <!--tabs区域-->
-            <tab-sub data="{{tabsData}}"></tab-sub>
+        <div class="layui-body" style="background: #FFFFFF;" ng-class="{bodySwitch:vm.isOk,bodySwitchOn:!vm.isOk}">
             <!-- 内容主体区域 -->
            
-            <div class="layui-anim" data-anim="layui-anim-scale">
-                <ui-view name="appContent" class="home"></ui-view>
+            <div class="layui-anim" data-anim="layui-anim-scale" style="padding: 10px;">
+                <ui-view name="appContent" class="home" style="width:100%;"></ui-view>
             </div>
         </div>
         <div class="layui-footer">

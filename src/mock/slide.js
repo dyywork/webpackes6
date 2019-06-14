@@ -5,29 +5,29 @@ Mock.mock('http://dingyongya.club:3001/api/slide','get',(option) => {
     code: 200,
     data: [{
       parentShow: true,
-      mainTitle: '首页',
-      icon: 'icon-index',
+      mainTitle: '数据管理',
+      icon: 'layui-icon-table',
       childTree: [
         {
           show: true,
-          title: '首页',
+          title: '商品类型配置',
           url: 'app.home'
+        },
+        {
+          show: false,
+          title: '支付方式配置',
+          url: 'app.about'
         }
       ]
     },
     {
       parentShow: false,
-      mainTitle: '表单',
-      icon: 'icon-index',
+      mainTitle: '账号管理',
+      icon: 'layui-icon-set',
       childTree: [
         {
           show: false,
-          title: '表单',
-          url: 'app.about'
-        },
-        {
-          show: false,
-          title: 'icon',
+          title: '中台账号管理',
           url: 'app.person'
         }
       ]
