@@ -4,6 +4,7 @@ import splashTemplate from './splash.html';
 const SplashRouting = ($stateProvider) => {
     $stateProvider.state('index', {
         url: '/index',
+        cache: false,
         template: splashTemplate,
         controller: 'SplashController',
         controllerAs: 'splash'

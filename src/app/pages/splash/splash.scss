@@ -1,6 +1,7 @@
 .login-bg {
   background-image: linear-gradient(62deg, #00b2ff 9%, #007bfe 100%);
   position: relative;
+  height: 100%;
   .login-title {
     width: 100%;
     text-align: center;
@@ -16,11 +17,15 @@
   }
   .login-form {
     position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
     padding: 10px 50px 10px;
     border-radius: 10px;
     width: 400px;
     height: auto;
-    margin: 15% auto 0px;
+    margin: 0 auto 0px;
     background: rgba(255, 255, 255, 0.5);
     z-index: 10;
   }

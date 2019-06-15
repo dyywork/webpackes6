@@ -37,3 +37,9 @@ $colors: (
 @import "./rtl";
 @import "../assets/lib/iosSelect/iosSelect.css";
 @import "../assets/lib/layui/css/layui.css";
+ body{
+  height: 100%;
+} 
+html{
+  height: 100%;
+}

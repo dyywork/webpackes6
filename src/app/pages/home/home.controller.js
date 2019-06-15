@@ -3,30 +3,15 @@ import '../../../mock/home';
 export default class HomeController {
     /*@ngInject*/
     constructor($state, userService, httpService, $cordovaAppVersion) {
-
         assign(this, { $state, userService, httpService, $cordovaAppVersion });
-
-        this.text = 'Welcome to the Ionic Seed';
         this.user = {
             name: 'Dave Ackerman',
             email: 'dave@dude.com'
         };
-        this.ionDate = '';
-        // make an API call to get our mock users
-        this.userService.getUsers().then(response => {
-            this.users = response.data.users;
-        },
-            (error) => {
-                this.error = 'something went wrong';
-            });
-        this.layer = layui.layer;
-
-        // this.layer.msg(111);
-        this.img = [];
         setTimeout(() => {
             this.ngInit();
         }, 200);
-
+        // this.ngInit();
     }
     ngInit() {
         var table = layui.table, $ = layui.jquery, form = layui.form;
@@ -42,7 +27,7 @@ export default class HomeController {
             , cols: [[
                 { field: 'id', title: '用户名ID', width: 100 }
                 , { field: 'urlImg', title: '地址' }
-                ,{field:'sex', title:'性别', width:85, templet: '#switchTpl', unresize: true}
+                , { field: 'sex', title: '性别', width: 85, templet: '#switchTpl', unresize: true }
                 , { fixed: 'right', width: 165, align: 'center', toolbar: '#barDemo' }
             ]]
             , height: 481
@@ -60,8 +45,12 @@ export default class HomeController {
                 statusName: 'success' //规定数据状态的字段名称，默认：code
                 , statusCode: true //规定成功的状态码，默认：0
             }
-            , done: (res) => {
+            , done: () => {
+                console.log('resize');
+
                 $('#LAY_table_user').resize();
+
+
             }
         });
 
@@ -89,7 +78,7 @@ export default class HomeController {
                     , yes: function () {
                         form.on('submit(dome)', (data) => {
                             console.log(data);
-                            layer.msg('表单数据'+JSON.stringify(data.field));
+                            layer.msg('表单数据' + JSON.stringify(data.field));
                             return false;
                         });
                         $('.layer-confirm').click();
