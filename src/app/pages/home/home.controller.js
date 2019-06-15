@@ -46,11 +46,7 @@ export default class HomeController {
                 , statusCode: true //规定成功的状态码，默认：0
             }
             , done: () => {
-                console.log('resize');
-
                 $('#LAY_table_user').resize();
-
-
             }
         });
 
@@ -66,7 +62,7 @@ export default class HomeController {
                     //向服务端发送删除指令
                 });
             } else if (layEvent === 'edit') {
-                $('body').append($('#addUser'));
+                $('body').append($('#addUser'));// 重点，遮罩层在弹窗之下
                 layer.open({
                     type: 1 //此处以iframe举例
                     , title: '编辑商品类型'
