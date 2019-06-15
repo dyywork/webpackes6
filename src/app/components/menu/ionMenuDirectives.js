@@ -1,5 +1,5 @@
 import '../../../mock/slide';
-const ionMenu = ['$state','httpService',($state,httpService) => {
+const ionMenu = ['$state','httpService','sessionService',($state,httpService,sessionService) => {
     return {
       restrict: 'AEMC',
       replace: true,
@@ -15,7 +15,7 @@ const ionMenu = ['$state','httpService',($state,httpService) => {
                               </a>
                               <dl class="layui-nav-child" ng-show="!attrs.isok">
                                   <dd ng-repeat="i in item.childTree" ng-class="{'layui-this': i.show }"
-                                      ng-click="goTree(i);$event.stopPropagation()">
+                                      ng-click="goTree(i,item);$event.stopPropagation()">
                                       <a href="javascript:;" style="padding-left: 40px;">{{i.title}}</a></dd>
                               </dl>
                           </li>
@@ -28,17 +28,31 @@ const ionMenu = ['$state','httpService',($state,httpService) => {
           form = layui.form;
           httpService.httpGet('api/slide',{}).then(res => {
             const {data} = res;
+            let tabOk = sessionService.getSession('tabOk');
+            let tabParentOk = sessionService.getSession('tabParentOk');
+            data.data.forEach(item => {
+              if (item.mainTitle === tabParentOk) {
+                item.parentShow = true;
+              } else {
+                item.parentShow = false;
+              }
+              item.childTree.forEach(childItem=> {
+                if (childItem.url === tabOk){
+                  childItem.show = true;
+                } else {
+                  childItem.show = false;
+                }
+              });
+            });
             scope.treeData = data.data;
             setTimeout(()=>{
               elements.render();
               form.render();
             },200);
-            console.log(res);
           });
-        scope.gettext = function() {
-          console.log(1);
-        };
-        scope.goTree = (res) => {
+        scope.goTree = (res, item) => {
+          sessionService.setSession('tabParentOk',item.mainTitle);
+          sessionService.setSession('tabOk',res.url);
           $state.go(res.url);
         };
       }
