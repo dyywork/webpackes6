@@ -6,7 +6,6 @@ const HomeRouting = ($stateProvider) => {
     $stateProvider
     .state('app.home', {
         url: '/home',
-        cache: false,
         views: {
           'appContent': {
             template: HomeTemplate,

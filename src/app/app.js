@@ -5,6 +5,7 @@
 // import "../assets/lib/ionic/js/angular.min";
 // import "../assets/lib/ionic/js/ionic.min";
 // import "../assets/lib/ionic/js/ionic-angular";
+
 import "../assets/lib/ionic/js/ionic.bundle";
  import '../ng-cordova';
 

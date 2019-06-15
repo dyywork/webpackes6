@@ -1,5 +1,6 @@
 import { assign } from 'lodash';
 import '../../../mock/home';
+import echarts from 'echarts/lib/echarts';
 export default class HomeController {
     /*@ngInject*/
     constructor($state, userService, httpService, $cordovaAppVersion) {
@@ -12,6 +13,7 @@ export default class HomeController {
             this.ngInit();
         }, 200);
         // this.ngInit();
+        console.log(echarts);
     }
     ngInit() {
         var table = layui.table, $ = layui.jquery, form = layui.form;
@@ -62,7 +64,11 @@ export default class HomeController {
                     //向服务端发送删除指令
                 });
             } else if (layEvent === 'edit') {
+                if ($('body').children('#addUser')[0]){
+                    $('body').children('#addUser')[0].remove();
+                }
                 $('body').append($('#addUser'));// 重点，遮罩层在弹窗之下
+                console.log($('body').children('#addUser').length);
                 layer.open({
                     type: 1 //此处以iframe举例
                     , title: '编辑商品类型'
