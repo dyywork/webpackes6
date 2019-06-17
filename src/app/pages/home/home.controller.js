@@ -15,6 +15,8 @@ export default class HomeController {
         // this.ngInit();
         console.log(echarts);
     }
+    
+    
     ngInit() {
         var table = layui.table, $ = layui.jquery, form = layui.form;
         //方法级渲染
@@ -64,8 +66,8 @@ export default class HomeController {
                     //向服务端发送删除指令
                 });
             } else if (layEvent === 'edit') {
-                if ($('body').children('#addUser')[0]){
-                    $('body').children('#addUser')[0].remove();
+                if ($('body').children('#addUser')[1]){
+                    $('body').children('#addUser')[1].remove();
                 }
                 $('body').append($('#addUser'));// 重点，遮罩层在弹窗之下
                 console.log($('body').children('#addUser').length);
